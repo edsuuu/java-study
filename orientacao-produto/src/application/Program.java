@@ -12,29 +12,24 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
         System.out.println("Entre com os dados do Produto: ");
 
-//        System.out.print("Nome: ");
-//        product.name = sc.nextLine();
-        product.name = "Arroz";
+        String name = "Arroz";
 
-//        System.out.print("Preço: ");
-//        product.price = sc.nextDouble();
-        product.price = 30.00;
+        double price = 30.00;
 
-//        System.out.print("Quantidade: ");
-//        product.quantity = sc.nextInt();
-        product.quantity = 10;
+//        int quantity = 10;
 
+        Product product = new Product(name, price);
 
-//        System.out.println(product.toString()); nao precisa definir tostring
+        product.setName("Feijao");
+        System.out.println("nome atualizado " + product.getName());
         System.out.println("Setagem de Produto Padrao 'Consulta': " + product);
 
-        int quantity = 20;
-        System.out.println();
-        System.out.println("Adicionando mais " + quantity + " itens no estoque");
-        product.addProductsNoestoque(quantity);
+        int addquantity = 20;
+
+        System.out.println("Adicionando mais " + addquantity + " itens no estoque");
+        product.addProductsNoestoque(addquantity);
 
         System.out.println("Setagem de Produto Atualizada: " + product);
 
@@ -42,7 +37,7 @@ public class Program {
         product.removeProductsDoEstoque(removeQuantity);
         System.out.println("Fazendo uma retirada de " + removeQuantity + " itens no estoque");
 
-        System.out.println("Produtos Atualizados no estoque" + product);
+        System.out.println("Produtos Atualizados no estoque " + product);
         sc.close();
     }
 
