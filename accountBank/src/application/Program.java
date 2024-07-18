@@ -11,23 +11,23 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Envie o número da conta: ");
+        System.out.println("Envie o número da conta: ");
         int numeroDaConta = sc.nextInt();
 
         sc.nextLine();
 
-        System.out.print("Envie o nome do titular: ");
+        System.out.println("Envie o nome do titular: ");
         String nomeDaPessoa = sc.nextLine();
 
-        System.out.print("Quer fazer um depósito inicial (y/n)? ");
+        System.out.println("Quer fazer um depósito inicial (y/n)? ");
         char resposta = sc.next().charAt(0);
 
         Account account;
 
         if (resposta == 'y') {
-            System.out.print("Digite o valor do depósito inicial: ");
-            double saldoInicial = sc.nextDouble();
-            account = new Account(numeroDaConta, nomeDaPessoa, saldoInicial);
+            System.out.println("Digite o valor do depósito inicial: ");
+            double depositoInicial = sc.nextDouble();
+            account = new Account(numeroDaConta, nomeDaPessoa, depositoInicial);
         } else {
             account = new Account(numeroDaConta, nomeDaPessoa);
         }
@@ -43,6 +43,7 @@ public class Program {
 
         System.out.print("\nDigite um valor de saque: ");
         double saque = sc.nextDouble();
+
         account.saque(saque);
         System.out.println("Dados da conta atualizados:");
         System.out.println(account);
