@@ -3,7 +3,6 @@ package application;
 import entities.Order;
 import entities.enums.OrderStatus;
 import java.util.Date;
-import java.util.Locale;
 
 public class Program {
     public static void main(String[] args) {
